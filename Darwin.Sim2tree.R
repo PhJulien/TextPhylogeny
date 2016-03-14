@@ -38,7 +38,7 @@ pheatmap(sim_title, clustering_distance_rows="correlation", clustering_distance_
 pal <- brewer.pal(3, "Set1")
 
 colscale <- colorpanel(n=100, low=pal[1], hi=pal[2])
-colscale <- colorpanel(n=100, low="gray80", hi=pal[1])
+colscale <- colorpanel(n=100, low="gray80", hi="firebrick2")
 
 
 pheatmap(sim_title, color=colscale, clustering_distance_rows="correlation", clustering_distance_cols="correlation", clustering_method="average", fontsize_row=5, fontsize_col=5)
@@ -58,6 +58,7 @@ tr2 <- tr
 tr2$tip.label <- as.character(info[tr2$tip.label,"Title"])
 
 plot(tr, type="phylogram", edge.width=3, edge.color="gray30")
+par(mar=c(1,1,1,1))
 plot(tr2, type="phylogram", edge.width=3, edge.color="gray30")
 
 
